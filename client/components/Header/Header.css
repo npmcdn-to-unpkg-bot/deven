@@ -1,0 +1,20 @@
+relative(top)
+	position: relative;
+	top: top;
+
+header
+	height: 55px;
+	padding: 10px 20px;
+	margin-top: 10px;
+
+	.logo
+		font-weight: 400;
+
+		img
+			max-width: 35px;
+			margin-left: 5px;
+			relative(5px);
+
+
+	.tiles
+		width: 36px;
