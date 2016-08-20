@@ -12,6 +12,16 @@ button, input {
 
 a {
 	text-decoration: none;
+	&:visited {
+		color: white;
+	}
+	&:active {
+		color white;
+	}
+}
+
+div, section, aside, footer, header, nav {
+	display: flex;
 }
 
 html {
@@ -19,11 +29,16 @@ html {
 }
 
 body {
+	display: flex;
 	font-size: 1.8rem;
 	background: #340068;
 	background-size: cover;
 	color: white;
 	font-family: 'Rubik', sans-serif;
+}
+
+#deven {
+	width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,53 +1,44 @@
-flex()
-	display: flex;
 
-x-y-center()
-	justify-content: center;
-	align-items: center;
 
-y-center()
-	align-items: center;
-
-column()
-	flex-direction: column;
-
-round()
-	border-radius: 10px;
-
-.splash.view
-	flex();
-	x-y-center();
-	height: 500px;
+.home.view
+	height: 100%;
+	width: 100%;
 
 	.search
+		width: 90%;
 		background: white;
-		flex();
-		column();
-		round();
+		border-radius: 10px;
+		box-sizing: padding-box;
 
 		.input
-			y-center();
-			width: 600px;
-			round();
+			width: 100%;
+			max-width: 992px;
+			border-radius: 10px;
 
 			img
 				height: 32px;
 				width: 32px;
 				opacity: 0.5;
+				margin-right: 15px;
 
 			input
 				background: white;
 				color: #340068;
 				font-size: 1.8rem;
-				width: 555px;
+				width: 100%;
 				padding: 15px;
-				round();
+				border-radius: 10px;
+
 
 			&::-webkit-input-placeholder
 				font-size: 1.8rem;
 				font-family: 'Rubik', sans-serif;
 				font-weight: 300;
 				font-style: italic;
+
+		.buttons
+			width: 100%;
+			background: #414361;
 
 		button
 			background: #414361;

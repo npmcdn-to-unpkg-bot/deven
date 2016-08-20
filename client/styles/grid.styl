@@ -4,12 +4,12 @@
  * *******************************/
 
 /* Children sit beside each other, horizontally. */
-.box {
+.row {
   display: flex;
 }
 
 /* Stack children vertically. */
-.box-col {
+.column {
   display: flex;
   flex-direction: column;
 }
@@ -18,33 +18,33 @@
 
 /* Horizontally align boxs */
 /* Vertically align box-col children */
-.box.x-center,
-.box-col.y-center {
+.row.x-center,
+.column.y-center,  {
   justify-content: center;
 }
 
 /* Horizontally align box-cols */
-.box-col.x-center,
-.box.y-center {
+.column.x-center,
+.row.y-center {
   align-items: center;
 }
 
 /* Horizontally apply even spacing to box children */
 /* Vertically apply even spacing to box-col children */
-.box.even-space,
-.box-col.even-space {
+.row.space-around,
+.column.space-around,  {
   justify-content: space-around;
 }
 
 /* Horizontally apply space between box children */
 /* Vertically apply space between to box-col children */
-.box.space-inside,
-.box-col.space-inside { justify-content: space-between }
+.row.space-between,
+.column.space-between,  { justify-content: space-between }
 
 /* Horizontally push children to end of box */
 /* Vertically push children to end of box-col */
-.box.align-end,
-.box-col.align-end {
+.row.push-children,
+.column.push-children,  {
   justify-content: flex-end;
 }
 
