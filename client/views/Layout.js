@@ -9,16 +9,12 @@ import resources from '../data/resources';
 export default class Layout extends Component {
   constructor() {
     super();
-    this.state = {
-      value: 45,
-      activeTags: []
-    }
   }
 
   addActiveTag(tag) {
     // const activeTags = this.state.activeTags;
     // activeTags.push(tag);
-    this.setState({activeTags: this.state.activeTags.push(tag)});
+    // this.setState({activeTags: this.state.activeTags.push(tag)});
   }
 
   aClick() {
@@ -31,7 +27,6 @@ export default class Layout extends Component {
       <div className="layout view column x-center">
         <Header />
         {React.cloneElement(this.props.children, {
-          activeTags: this.state.activeTags
         })}
         <Footer />
       </div>
