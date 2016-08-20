@@ -22,7 +22,7 @@ module.exports = {
 
 			// stylus-loader
 			{
-				test: /\.css$/,
+				test: /\.styl$/,
 				loader: 'style-loader!css-loader!stylus-loader'
 			}
 		]

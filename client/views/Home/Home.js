@@ -1,14 +1,14 @@
 import React from 'react';
-import './Splash.css';
+import './Home.styl';
 
-class Splash extends React.Component {
+class Home extends React.Component {
 	handleSearchClick() {
 			alert('clicked');
 	}
 
 	render( ) {
 		return (
-			<div className="splash view">
+			<div className="home view">
 				<div className="search">
 					<div className="input row">
 						<input placeholder="query devon" type="text" spellCheck="false"/>
@@ -25,4 +25,4 @@ class Splash extends React.Component {
 	}
 }
 
-export default Splash;
+export default Home;
