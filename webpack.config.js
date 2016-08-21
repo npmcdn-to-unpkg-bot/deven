@@ -17,12 +17,13 @@ module.exports = {
 	      loader: 'babel-loader',
 	      query: {
 	        presets: ['es2015', 'react'],
+					plugins: ['transform-decorators-legacy']
 	      }
 			},
 
 			// stylus-loader
 			{
-				test: /\.css$/,
+				test: /\.styl$/,
 				loader: 'style-loader!css-loader!stylus-loader'
 			}
 		]
