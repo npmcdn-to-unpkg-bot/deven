@@ -59,11 +59,6 @@ import './styles/Result.styl';
 // you the layout with the Home view inside of it, but it
 // can change to show other routes inside of the Layout
 // "window", as well.
->>>>>>> styling
-
-// Components
-import Header from './components/Header/Header.js';
-import Footer from './components/Footer/Footer.js';
 
 class AppFrame extends React.Component {
 	render() {
@@ -78,9 +73,6 @@ class AppFrame extends React.Component {
 }
 
 ReactDOM.render(
-<<<<<<< HEAD
-	<AppFrame />,
-=======
 	<Router history={browserHistory}>
 		<Route path="/" component={Layout}>
 			<IndexRoute component={Home}></IndexRoute>
@@ -90,6 +82,5 @@ ReactDOM.render(
 			{/* This is a JSX comment. */}
 		</Route>
 	</Router>,
->>>>>>> styling
 	document.getElementById('deven')
 );
