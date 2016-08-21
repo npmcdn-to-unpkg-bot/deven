@@ -28,9 +28,23 @@ export default class Home extends React.Component {
 		// this.setState({activeTags: []});
 	}
 
-	handleXClick(e) {
-		const tag = e.target.parentNode;
-		tag.parentNode.removeChild(tag);
+	handleTagXClick(e) {
+
+		let activeTags = this.state.activeTags;
+
+		const tag = e.target.parentNode,
+					tagText = tag.getAttribute('data-tag'),
+					tagIndex = activeTags.indexOf(tagText.toLowerCase());
+
+		activeTags.splice(tagIndex, 1);
+
+		this.setState({
+			activeTags
+		}, () => { console.log(this.state.activeTags) });
+
+
+
+
 	}
 
 	handleClearClick() {
@@ -81,9 +95,9 @@ export default class Home extends React.Component {
 						<div className="tag-cloud">
 							{this.state.activeTags.map((tag, i) => {
 								return (
-									<div className="tag row y-center" key={i}>
+									<div className="tag row y-center" key={i} data-tag={tag}>
 										<p>{tag}</p>
-										<img src="./images/add.svg" onClick={this.handleXClick}/>
+										<img src="./images/add.svg" onClick={this.handleTagXClick.bind(this)}/>
 									</div>
 								)
 							})}
