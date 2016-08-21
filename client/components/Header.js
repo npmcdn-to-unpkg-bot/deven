@@ -12,9 +12,8 @@ export default class Header extends Component {
           </h1>
         </Link>
 
-        <Link to="/login">
-          <img className="open-nav" src="./images/add.svg" alt="open navigation"/>
-        </Link>
+        <img className="open-nav" src="./images/add.svg" alt="open navigation"
+          onClick={this.props.navToggle}/>
       </header>
     )
   }

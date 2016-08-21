@@ -8,9 +8,32 @@ export default class Layout extends Component {
     super();
   }
 
+  componentDidMount() {
+    this.setState({
+      DOM_layout: (() => document.getElementsByClassName('layout')[0])(),
+      DOM_openNav: (() => document.querySelector('img.open-nav'))()
+    })
+  }
+
+
   aClick() {
     this.setState({value: this.state.value+1});
     console.log(this.state);
+  }
+
+  navToggle() {
+    const layout = this.state.DOM_layout,
+          openNavButton = this.state.DOM_openNav;
+
+    if (layout.classList.contains('nav-open')) {
+      layout.classList.remove('nav-open');
+      // openNavButton.src = '';
+      openNavButton.classList.remove('x')
+    } else {
+      layout.classList.add('nav-open');
+      // openNavButton.src = '';
+      openNavButton.classList.add('x')
+    }
   }
 
   render() {
@@ -28,11 +51,9 @@ export default class Layout extends Component {
           </div>
         </nav>
 
-        <Header />
+        <Header navToggle={this.navToggle.bind(this)}/>
 
         {React.cloneElement(this.props.children, {})}
-
-        <Footer />
       </div>
     )
   }
