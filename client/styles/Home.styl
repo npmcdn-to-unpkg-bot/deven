@@ -1,7 +1,6 @@
 
 
 .home.view
-	height: 100%;
 	width: 100%;
 
 	.search
@@ -59,8 +58,18 @@
 
 			&::-webkit-scrollbar
 				background: #414361;
-			&::-webkit-scrollbar-track
-				background: #414361;
+				height: 8px;
 				box-shadow: 0 0 5px rgba(0,0,0,0.2);
+
 			&::-webkit-scrollbar-thumb
 				background: #edf2f4;
+
+			.padder
+				font-size: 1.25rem;
+				width: 15px;
+				height: 20px;
+				opacity: 0;
+
+	.results
+		padding: 0px 0;
+		width: 90%;

@@ -1,16 +1,10 @@
-relative(top) {
-	position: relative;
-	top: top;
-}
-width-height(x, y) {
-  width: x;
-  height: y;
-}
-
-nav {
-  display: none;
-}
-
 .layout.view {
 	width: 100%;
+	position: relative;
+	top: -55px;
+	transition: position 0.5s;
+
+	&.nav-open {
+		top: 0;
+	}
 }

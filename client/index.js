@@ -36,9 +36,11 @@ import './styles/Login.styl';
 import './styles/Home.styl';
 
 // Component Styles
+import './styles/Nav.styl';
 import './styles/Header.styl';
 import './styles/Search.styl';
 import './styles/Tag.styl';
+import './styles/Result.styl';
 
 
 // Here we create our actual router and attach it to the

@@ -3,18 +3,9 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import tags from '../data/tags';
-import resources from '../data/resources';
-
 export default class Layout extends Component {
   constructor() {
     super();
-  }
-
-  addActiveTag(tag) {
-    // const activeTags = this.state.activeTags;
-    // activeTags.push(tag);
-    // this.setState({activeTags: this.state.activeTags.push(tag)});
   }
 
   aClick() {
@@ -25,9 +16,22 @@ export default class Layout extends Component {
   render() {
     return (
       <div className="layout view column x-center">
+        <nav className="row x-center">
+          <div className="row x-center max-1200">
+            <ul className="row max-1200 space-around y-center">
+              <li>add resource</li>
+              <li>log in</li>
+              <li>register</li>
+              <li>github</li>
+              <li>about</li>
+            </ul>
+          </div>
+        </nav>
+
         <Header />
-        {React.cloneElement(this.props.children, {
-        })}
+
+        {React.cloneElement(this.props.children, {})}
+
         <Footer />
       </div>
     )
