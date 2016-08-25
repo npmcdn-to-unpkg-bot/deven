@@ -18,8 +18,11 @@ import Header from './comps/Header/Header';
 // import TagCloud from './comps/TagCloud/TagCloud';
 
 import Home from './views/Home/Home';
-import Login from './views/Login/Login.js';
+import Login from './views/Login/Login';
 import Register from './views/Register/Register';
+import Account from './views/Account/Account';
+import LogOut from './views/LogOut/LogOut';
+import About from './views/About/About';
 
 // AppWindow serves as a window for different views.
 // The AppWindow holds components that will be present
@@ -38,8 +41,13 @@ class AppWindow extends Component {
 			this.setState({
 				loggedIn: true,
 				thisUser: userObj
-			}, () => {
-				setTimeout(() => {console.log(this.state)}, 2000)
+			});
+		};
+
+		this.logOut = () => {
+			this.setState({
+				loggedIn: false,
+				thisUser: {}
 			});
 		};
 	};
@@ -47,13 +55,17 @@ class AppWindow extends Component {
 	render() {
 		const childrenWithProps = React.Children.map(this.props.children,
      (child) => React.cloneElement(child, {
-			 logInSuccess: this.logInSuccess
+			 logInSuccess: this.logInSuccess,
+			 logOut: this.logOut
      })
     );
 
 		return (
 			<div className="AppWindow component">
-				<NavBar />
+				<NavBar
+					loggedIn={this.state.loggedIn}
+					thisUser={this.state.thisUser}
+				/>
 
 				{childrenWithProps}
 
@@ -72,6 +84,9 @@ ReactDOM.render(
 			<IndexRoute component={Home}></IndexRoute>
 			<Route path="/login" component={Login}></Route>
 			<Route path="/register" component={Register}></Route>
+			<Route path="/account" component={Account}></Route>
+			<Route path="/log-out" component={LogOut}></Route>
+			<Route path="/about" component={About}></Route>
 		</Route>
 	</Router>,
 	document.getElementById('root')
