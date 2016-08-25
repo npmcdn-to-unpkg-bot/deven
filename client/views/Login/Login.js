@@ -7,11 +7,6 @@ export default class Login extends Component {
       <div className="Login view">
         <div className="form">
           <h2>Log In</h2>
-          <p>
-            Want to be able to submit new resources,
-            vote on resources you like, and be a part
-            of the Deving community?
-          </p>
           <form>
             <input type="text" name="email"/>
             <input type="password" name="password"/>
