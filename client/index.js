@@ -19,6 +19,7 @@ import Header from './comps/Header/Header';
 
 import Home from './views/Home/Home';
 import Login from './views/Login/Login.js';
+import Register from './views/Register/Register';
 
 // AppWindow serves as a window for different views.
 // The AppWindow holds components that will be present
@@ -60,6 +61,7 @@ ReactDOM.render(
 		<Route path="/" component={AppWindow}>
 			<IndexRoute component={Home}></IndexRoute>
 			<Route path="/login" component={Login}></Route>
+			<Route path="/register" component={Register}></Route>
 		</Route>
 	</Router>,
 	document.getElementById('root')
