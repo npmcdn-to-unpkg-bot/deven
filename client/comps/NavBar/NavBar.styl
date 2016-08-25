@@ -1,0 +1,75 @@
+@import '../../styles/globals.styl'
+
+nav.component
+  z-index 15
+  row(center, center)
+  background WHITE
+  width 100%
+  height 60px
+  position fixed
+  top 0
+
+  a
+    color RED
+
+  .inner
+    contain(100%, 992px)
+    row(between, center)
+    centerBetween(0px, 768px)
+
+    .login
+      hideBetween(0px, 768px)
+      row(start, center)
+
+    .login p
+      margin-bottom 0
+      font-weight 500
+      margin-left 20px
+      font-family ROBO
+      font-size 1.4rem
+
+      &:first-of-type
+        color RED
+        border 2px solid RED
+        padding 4px 10px
+
+      a
+        color BLACK
+        &:first-of-type
+          color RED
+
+
+    .logo
+      row(center, center)
+      position relative
+      top -3px
+
+    .logo p
+      margin-bottom 0
+      letter-spacing 1px
+      font-weight 900
+      font-size 3.6rem
+      font-family PLAY
+
+      a
+        color BLACK
+
+    .links
+      hideBetween(0px, 768px)
+      row(end, center)
+
+    .links p
+      margin-bottom 0
+      font-weight 500
+      margin-right 20px
+      font-family ROBO
+      font-size 1.4rem
+
+
+
+@media screen and (min-width: 0px) and (max-width: 480px)
+  display none
+
+@media screen and (min-width: 481px) and (max-width: 768px)
+  .NavBar.component
+    color black

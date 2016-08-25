@@ -1,0 +1,97 @@
+@import '../../../styles/globals.styl'
+
+.SearchBar.component
+  z-index 10
+  column(center, center)
+  background SMOKE
+  margin-top 60px
+  width 100%
+
+  .inner
+    column(center, center)
+    contain(100%, 768px)
+    padding-left 10px
+    padding-right 10px
+
+    .row.one
+      row(center, center)
+      contain(100%, 768px)
+      padding-left 10px
+      padding-right 10px
+      height 60px
+
+    .row.two
+      row(around, start)
+      contain(100%, 768px)
+      padding-left 10px
+      padding-right 10px
+      height 44px
+
+      &.hidden
+        display none
+
+      input
+        width 30%
+        height 30px
+        font-weight 400
+        background GRAY
+        color GREY
+        text-transform: lowercase;
+        padding 4px 10px
+        border-radius 0
+        &::-webkit-input-placeholder
+          color GREY
+          font-style normal
+
+
+    input
+      font-size 1.5rem
+      font-family ROBO
+      font-weight 900
+      padding-left 15px
+      padding-right 15px
+      border-radius 4px
+      letter-spacing 1px
+      height 40px
+      width 90%
+      color RED
+
+      &::-webkit-input-placeholder
+        letter-spacing 1px
+        font-style italic
+        font-family ROBO
+        font-weight 400
+
+    button
+      background RED
+      height 40px
+      border-radius 4px
+      margin-left 8px
+      padding-left 10px
+      padding-right 10px
+      font-size 2.4rem
+      font-weight 700
+      color white
+      transition all 0.25s
+
+      &:active
+        box-shadow inset 0px 0px 1px BLACK
+        img
+          transform rotateY(180deg)
+
+      img
+        width 24px
+        height 24px
+        transition all 0.5s
+
+    button.show-filters
+      @media screen and (max-width: 768px)
+        display none
+
+// @media screen and (min-width: 0px) and (max-width: 480px)
+
+@media screen and (max-width: 768px)
+  .SearchBar.component
+    input
+      margin-center()
+      width 90%

@@ -1,0 +1,52 @@
+@import '../../../../styles/globals.styl'
+
+.Result.component
+    background WHITE
+    // box-shadow 0 0 5px rgba(0,0,0,0.25)
+    contain(90%, 992px)
+    column(start,center)
+
+    margin 10px 0px
+
+    .inner
+      padding 25px 20px 5px
+      column(start, center)
+      color BLACK
+
+  .title
+    font-size 2.4rem
+    margin-bottom 0px
+
+  .url
+    color RED
+    margin-bottom 10px
+    font-size 1.2rem
+
+  .description
+    font-size 1.6rem
+
+  .actions
+    row(start, center)
+    width 100%
+    height 40px
+    color RED
+    margin-bottom 5px
+
+    p
+      border 2px solid RED
+      padding 4px 10px
+      font-weight 500
+      margin-left 20px
+      margin-bottom 0px
+      font-size 1.4rem
+
+      @media screen and (max-width: 480px)
+        font-size 1.2rem
+
+  .dateAdded
+    margin-bottom 25px
+    margin-left 20px
+    color GREY
+
+    p
+      margin-bottom 0
