@@ -29,15 +29,25 @@ class AppWindow extends Component {
 		super();
 		this.state = {
 			loggedIn: false,
+			thisUser: {},
 			searchTags: []
+		};
+
+		this.logInSuccess = (userObj) => {
+			console.log('logInSuccess from index.js');
+			this.setState({
+				loggedIn: true,
+				thisUser: userObj
+			}, () => {
+				setTimeout(() => {console.log(this.state)}, 2000)
+			});
 		};
 	};
 
 	render() {
 		const childrenWithProps = React.Children.map(this.props.children,
      (child) => React.cloneElement(child, {
-       addSearchTag: this.addSearchTag,
-			 removeSearchTag: this.removeSearchTag,
+			 logInSuccess: this.logInSuccess
      })
     );
 

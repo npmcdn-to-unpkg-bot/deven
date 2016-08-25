@@ -16,7 +16,7 @@ export default class NavBar extends Component {
           </div>
           <div className="links">
             <p><Link to="/about">ABOUT</Link></p>
-            <p><Link to="/github">GITHUB</Link></p>
+            <p><a href="http://www.github.com/colshacol/deven">GITHUB</a></p>
           </div>
         </div>
       </nav>

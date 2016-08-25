@@ -74,6 +74,7 @@ export default class Home extends Component {
 			<div className="Home view">
 				<SearchBar
 					addSearchTag={e => this.addSearchTag(e)}
+					logInSuccess={this.props.logInSuccess}
 				/>
 
 				<TagCloud

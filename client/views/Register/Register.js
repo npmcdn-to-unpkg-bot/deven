@@ -13,9 +13,10 @@ export default class Register extends Component {
             of the Deving community?
           </p>
           <form>
-            <input type="text" name="email"/>
-            <input type="password" name="password"/>
-            <input type="password" name="verify password"/>
+            <input type="text" name="email" placeholder="email"/>
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" placeholder="password"/>
+            <input type="password" name="verify password" placeholder="verify password"/>
           </form>
           <div className="buttons">
             <button className="submit-button">
