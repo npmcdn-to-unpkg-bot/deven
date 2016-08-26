@@ -18,13 +18,13 @@ export default class SearchBar extends Component {
             <input placeholder="Add Tags To Search" spellCheck="false"
               onKeyPress={this.props.addSearchTag}/>
             <button>
-              <img src="./images/search.svg"/>
+              <img src="build/images/search.svg"/>
             </button>
             <button className="show-filters" onClick={this.showFilters}>
-              <img src="./images/target-folder.svg"/>
+              <img src="build/images/target-folder.svg"/>
             </button>
             <button onClick={this.props.emptyTagCloud}>
-              <img src="./images/trash.svg"/>
+              <img src="build/images/trash.svg"/>
             </button>
           </div>
 
