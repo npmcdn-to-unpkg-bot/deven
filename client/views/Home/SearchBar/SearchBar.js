@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './SearchBar.styl';
 
 export default class SearchBar extends Component {
-  showFilters() {
-    console.log('showFilters');
-    const filters = document.querySelector('.row.two');
-    filters.classList.toggle('hidden');
-  }
-
+  constructor(props) {
+    super(props);
+    this.showFilters = () => {
+      const filters = document.querySelector('.row.two');
+      filters.classList.toggle('hidden');
+    };
+  };
 
   render() {
     return (
@@ -16,12 +17,17 @@ export default class SearchBar extends Component {
           <div className="row one">
             <input placeholder="Add Tags To Search" spellCheck="false"
               onKeyPress={this.props.addSearchTag}/>
-
-            <button><img src="./images/search.svg"/></button>
+            <button>
+              <img src="./images/search.svg"/>
+            </button>
             <button className="show-filters" onClick={this.showFilters}>
               <img src="./images/target-folder.svg"/>
             </button>
+            <button onClick={this.props.emptyTagCloud}>
+              <img src="./images/trash.svg"/>
+            </button>
           </div>
+
           <div className="row two hidden">
             <input list="languages" name="languages" placeholder="Languages"/>
             <datalist id="languages">

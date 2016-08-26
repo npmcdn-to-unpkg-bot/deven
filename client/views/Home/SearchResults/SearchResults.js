@@ -16,6 +16,8 @@ export default class SearchResults extends Component {
                 dateAdded={result.dateAdded}
                 votes={result.votes}
                 thisUserVoted={result.thisUserVoted}
+                tags={result.tags}
+                loggedIn={this.props.loggedIn}
               />
             )
           })}

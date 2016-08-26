@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './TagCloud.styl';
+import { observer } from 'mobx-react';
 
 import Tag from './Tag/Tag';
 
+@observer
 export default class TagCloud extends Component {
   render() {
     return (

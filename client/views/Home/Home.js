@@ -19,7 +19,8 @@ export default class Home extends Component {
 					description: ' Learn JavaScript Properly (For Beginners and Experienced Programmers) or related JavaScript tutorials online; this is the worst way to learn a programming language. I would like to thank you for all your hard work, this site is a great resource.',
 					votes: 205,
 					dateAdded: 'December 20, 1993',
-					thisUserVoted: true
+					thisUserVoted: true,
+					tags: ['javascript', 'express', 'node']
 				},
 				{
 					title: 'YDKJS | You don\'t know JavaScript!',
@@ -27,10 +28,16 @@ export default class Home extends Component {
 					description: 'You Don\'t Know JS (book series). This is a series of books diving deep into the core mechanisms of the JavaScript language. The first edition of this book sucked.',
 					votes: 99,
 					dateAdded: 'December 20,2099',
-					thisUserVoted: true
+					thisUserVoted: true,
+					tags: ['flask', 'django', 'python']
 				}
 			]
 		};
+		this.emptyTagCloud = () => {
+			this.setState({
+				searchTags: []
+			})
+		}
 	};
 
 	addSearchTag(e) {
@@ -75,6 +82,7 @@ export default class Home extends Component {
 				<SearchBar
 					addSearchTag={e => this.addSearchTag(e)}
 					logInSuccess={this.props.logInSuccess}
+					emptyTagCloud={this.emptyTagCloud}
 				/>
 
 				<TagCloud
@@ -82,7 +90,10 @@ export default class Home extends Component {
 					removeSearchTag={e => this.removeSearchTag(e)}
 				/>
 
-			<SearchResults results={this.state.searchResults}/>
+			<SearchResults
+				results={this.state.searchResults}
+				loggedIn={this.props.loggedIn}
+			/>
 			</div>
 		)
 	}

@@ -5,7 +5,9 @@ export default class Account extends Component {
   render() {
     return (
       <div className="Account view">
-        <h1>Account.</h1>
+        <div className="inner">
+          <h3>Account Settings</h3>
+        </div>
       </div>
     )
   }

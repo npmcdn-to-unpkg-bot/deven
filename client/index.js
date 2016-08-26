@@ -56,7 +56,8 @@ class AppWindow extends Component {
 		const childrenWithProps = React.Children.map(this.props.children,
      (child) => React.cloneElement(child, {
 			 logInSuccess: this.logInSuccess,
-			 logOut: this.logOut
+			 logOut: this.logOut,
+			 loggedIn: this.state.loggedIn
      })
     );
 

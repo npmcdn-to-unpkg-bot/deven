@@ -3,6 +3,7 @@ import './Result.styl';
 
 export default class Result extends Component {
   render() {
+    const loggedIn = (this.props.loggedIn) ? 'logged-in' : 'logged-out';
     return (
       <div className="Result component">
         <div className="inner">
@@ -11,9 +12,17 @@ export default class Result extends Component {
           <p className="description">{this.props.description}</p>
         </div>
         <div className="actions">
-          <p>VOTE {this.props.votes}</p>
-          <p>EDIT</p>
+          <p className={loggedIn}>VOTE {this.props.votes}</p>
+          <p className={loggedIn}>EDIT</p>
           <p>REPORT</p>
+        </div>
+        <div className="tags">
+          <p>Tags:</p>
+          {this.props.tags.map((tag, key) => {
+            return (
+              <p className="tag" key={key}>{tag}</p>
+            )
+          })}
         </div>
         <div className="dateAdded">
           <p>{this.props.dateAdded}</p>
