@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
+import axios from 'axios';
 import './Register.styl';
 
 export default class Register extends Component {
@@ -7,16 +8,25 @@ export default class Register extends Component {
     super(props);
     this.handleRegisterRequest = e => {
       e.preventDefault();
-      browserHistory.push('/');
       const email = document.querySelector('[name="email"]').value,
             username = document.querySelector('[name="username"]').value,
             password = document.querySelector('[name="password"]').value,
             password2 = document.querySelector('[name="password2"]').value;
 
-      console.log(email);
-      console.log(username);
-      console.log(password);
-      console.log(password2);
+      axios.post('https://devengin.herokuapp.com/api/accounts/registration/', {
+        "username": username,
+        "email": email,
+        "password": password,
+        "password2": password2
+      }, {
+        headers: {"Content-Type": "application/json"}
+      }).then((response) => {
+        console.log(response.responseText);
+        browserHistory.push('/');
+      }).catch((error) => {
+        console.log(error);
+      })
+
     }
   }
 

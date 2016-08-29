@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
+import axios from 'axios';
 import './Login.styl';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = () => {
-      const res = true;
-      const userObj = {
-        name: 'timmy',
-        age: 49
-      }
-      if (res) {
-        this.props.logInSuccess(userObj);
-        browserHistory.push('/');
-      } else {
-        this.logInFail();
-      }
+      axios.get('https://devengin.herokuapp.com/api/accounts/login/', {
+        params: {
+          username:
+        }
+      })
+
+
+
+      // const res = true;
+      // const userObj = {
+      //   name: 'timmy',
+      //   age: 49
+      // }
+      // if (res) {
+      //   this.props.logInSuccess(userObj);
+      //   browserHistory.push('/');
+      // } else {
+      //   this.logInFail();
+      // }
     }
   }
 
