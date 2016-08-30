@@ -6,27 +6,33 @@ import './Register.styl';
 export default class Register extends Component {
   constructor(props) {
     super(props);
+
+
+
+
+
+
+
+
     this.handleRegisterRequest = e => {
       e.preventDefault();
-      const email = document.querySelector('[name="email"]').value,
+      const email = encodeURIComponent(document.querySelector('[name="email"]').value),
             username = document.querySelector('[name="username"]').value,
             password = document.querySelector('[name="password"]').value,
             password2 = document.querySelector('[name="password2"]').value;
 
-      axios.post('https://devengin.herokuapp.com/api/accounts/registration/', {
-        "username": username,
-        "email": email,
-        "password": password,
-        "password2": password2
-      }, {
-        headers: {"Content-Type": "application/json"}
-      }).then((response) => {
-        console.log(response.responseText);
-        browserHistory.push('/');
-      }).catch((error) => {
-        console.log(error);
-      })
-
+      const req = new XMLHttpRequest();
+      req.onreadystatechange = () => {
+        if (req.readyState == 4 && req.status == 200) {
+            console.log(req.responseText);
+        }
+    };
+    req.open("POST", 'https://devengin.herokuapp.com/api/accounts/registration/');
+    req.setRequestHeader("Content-type", "application/json");
+    req.setRequestHeader("Accept", "application/json");
+    // req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // req.responseType = 'json';
+    req.send(`username=${username}&email=${email}&password=${password}&password2=${password2}`);
     }
   }
 

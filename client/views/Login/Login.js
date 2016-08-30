@@ -6,12 +6,12 @@ import './Login.styl';
 export default class Login extends Component {
   constructor(props) {
     super(props);
-    this.handleLogin = () => {
-      axios.get('https://devengin.herokuapp.com/api/accounts/login/', {
-        params: {
-          username:
-        }
-      })
+    // this.handleLogin = () => {
+    //   axios.get('https://devengin.herokuapp.com/api/accounts/login/', {
+    //     params: {
+    //       username:
+    //     }
+    //   })
 
 
 
@@ -26,7 +26,7 @@ export default class Login extends Component {
       // } else {
       //   this.logInFail();
       // }
-    }
+    // }
   }
 
   render() {
